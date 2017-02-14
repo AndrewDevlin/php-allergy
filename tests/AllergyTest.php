@@ -6,13 +6,12 @@ require_once "src/Allergy.php";
         {
             $test_coin = new Allergy;
                 //Arrange
-                $input = 225;
+                $input = 5;
                 $test_coin->checkAllergy($input);
                 //Act
                 $result = $test_coin->checkAllergy($input);
-                // $expected_result = 0.10;
                 //Assert
-                $this->AssertEquals("cats, pollen, chocolate, ", $result);
+                $this->AssertEquals("cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs, ", $result);
         }
     }
  ?>

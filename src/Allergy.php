@@ -26,6 +26,26 @@
                     $output .= "chocolate, ";
                     $score = $score - $chocolate;
                 }
+                if ($score >= 16) {
+                    $output .= "tomatoes, ";
+                    $score = $score - $tomatoes;
+                }
+                if ($score >= 8) {
+                    $output .= "strawberries, ";
+                    $score = $score - $strawberries;
+                }
+                if ($score >= 4) {
+                    $output .= "shellfish, ";
+                    $score = $score - $shellfish;
+                }
+                if ($score >= 2) {
+                    $output .= "peanuts, ";
+                    $score = $score - $peanuts;
+                }
+                if ($score >= 1) {
+                    $output .= "eggs, ";
+                    $score = $score - $eggs;
+                }
                 return  $output;
             }
         }
