@@ -4,15 +4,22 @@ require_once "src/Allergy.php";
     {
         function test_checkAllergy()
         {
-            $test_coin = new Allergy;
-                //Arrange
-                $input = 5;
-                $test_coin->checkAllergy($input);
-                //Act
-                $result = $test_coin->checkAllergy($input);
-                //Assert
-                // $this->AssertEquals("cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs, ", $result);
-                $this->AssertEquals("shellfish, eggs", $result);
+            // Arrange
+            $tests = array(
+                array(5, "shellfish, eggs"),
+                array(7, "shellfish, peanuts, eggs")
+            );
+
+            $test_allergy = new Allergy;
+
+            foreach ($tests as $test) {
+                // ACT
+                $result = $test_allergy->checkAllergy($test[0]);
+
+                // Assert
+                $this->AssertEquals($test[1], $result);
+            }
+            // $this->AssertEquals("cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs, ", $result);
         }
     }
  ?>
