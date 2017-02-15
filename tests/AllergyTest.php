@@ -11,7 +11,8 @@ require_once "src/Allergy.php";
                 //Act
                 $result = $test_coin->checkAllergy($input);
                 //Assert
-                $this->AssertEquals("cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs, ", $result);
+                // $this->AssertEquals("cats, pollen, chocolate, tomatoes, strawberries, shellfish, peanuts, eggs, ", $result);
+                $this->AssertEquals("shellfish, eggs", $result);
         }
     }
  ?>
